@@ -1,23 +1,30 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-
 import { BACKEND_URL } from "../utils/utlis";
 
 function Purchases() {
   const [purchases, setPurchases] = useState([]);
   const [loading, setLoading] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [user, setUser] = useState(null);
+  const [token, setToken] = useState(null);
   const navigate = useNavigate();
 
-  const user = JSON.parse(localStorage.getItem("user"));
-  const token = user?.token;
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const userData = JSON.parse(localStorage.getItem("user"));
+      setUser(userData);
+      setToken(userData?.token);
+
+      if (!userData?.token) {
+        navigate("/login");
+      }
+    }
+  }, [navigate]);
 
   useEffect(() => {
-    if (!token) {
-      navigate("/login");
-      return;
-    }
+    if (!token) return;
 
     const fetchPurchases = async () => {
       try {
@@ -28,10 +35,7 @@ function Purchases() {
             withCredentials: true,
           }
         );
-
-        // API returns { purchases: [ { courseId: {...}, ... } ] }
         const raw = response.data.purchases;
-        // Map to array of course objects
         const courses = Array.isArray(raw)
           ? raw.map((item) => item.courseId)
           : [];
@@ -43,7 +47,7 @@ function Purchases() {
     };
 
     fetchPurchases();
-  }, [token, navigate]);
+  }, [token]);
 
   if (loading) {
     return (
