@@ -16,6 +16,11 @@ const app = express();
 
 const port = process.env.PORT || 3000;
 const mongoUri = process.env.MONGO_URI;
+const allowedOrigins = [
+  "https://courseify-2-git-main-saatvik-pandeys-projects-614452e8.vercel.app",
+  "https://courseify-2-immb2jcgg-saatvik-pandeys-projects-614452e8.vercel.app",
+  // add any other Vercel preview or production URLs you use
+];
 app.use(express.json());
 app.use(cookieParser());
 app.use(fileUpload({
@@ -24,7 +29,7 @@ app.use(fileUpload({
 }));
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: allowedOrigins,
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],
