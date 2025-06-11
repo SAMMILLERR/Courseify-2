@@ -104,8 +104,8 @@ npm start
 
 ## Deployment
 
-- **Backend:** Deploy to [Render](https://render.com/), [Heroku](https://heroku.com/), or similar.
-- **Frontend:** Deploy to [Vercel](https://vercel.com/) or [Netlify](https://netlify.com/).
+- **Backend:** Deploy to [Render](https://courseify-2-4r4j.onrender.com), .
+- **Frontend:** Deploy to [Vercel]([https://vercel.com/](https://courseify-2-git-main-saatvik-pandeys-projects-614452e8.vercel.app/)) .
 - **CORS:** Make sure to add your deployed frontend URL to the backend's `allowedOrigins` array.
 
 ---
@@ -129,19 +129,10 @@ npm start
 
 ---
 
-## License
-
-MIT
-
----
-
 ## Authors
 
-- [Your Name](https://github.com/yourusername)
+- [SAMMILLERR](https://github.com/SAMMILLERR)
 - Saatvik Pandey
 
 ---
 
-## Questions?
-
-Open an issue or contact the maintainer.
