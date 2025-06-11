@@ -3,6 +3,13 @@
 Courseify is a full-stack MERN (MongoDB, Express, React, Node.js) web application for online course management, featuring user authentication, admin dashboard, course creation, purchase, and cloud image upload.
 
 ---
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/eocaJUkZHvQ/0.jpg)](https://www.youtube.com/watch?v=eocaJUkZHvQ)
+
+Watch the full walkthrough of Courseify on [YouTube](https://www.youtube.com/watch?v=eocaJUkZHvQ).
+
+---
 
 ## Features
 
